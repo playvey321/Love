@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Love</title>
+</head>
+
+<body>
+    <section>
+
+        <div class="container">
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+
+            <div class="letter__window">
+                <div class="letter__container">
+                    <div class="letter__text">
+                        <span>От:Матвея</span>
+                        <br>
+                        <span>Кому:Карине</span>
+                    </div>
+                    <div class="letter__border"></div>
+                    <div class="letter__text letter__second--text">
+                        <span>Я хочу быть с тобой. Отныне я хочу проводить все свои дни, пока не умру, с тобой и только
+                            с тобой</span>
+                    </div>
+                    <div class="heart letter__heart">
+                        <div class="left__half"></div>
+                        <div class="right__half"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="letter">
+                <div class="top__envelope"></div>
+                <div class="paper" id="paper">
+                    <div class="heart">
+                        <div class="left__half"></div>
+                        <div class="right__half"></div>
+                    </div>
+                    <div class="name__stripes stripes"></div>
+                    <div class="text__stripes stripes"></div>
+                </div>
+                <div class="envelope">
+                    <div class="emptiness"></div>
+                    <div class="heart__gif"></div>
+                </div>
+            </div>
+
+            <button class="open__btn">Open</button>
+            <button class="read__text_btn">Read</button>
+            <button class="reset__btn" onclick="location.reload(); return false;">Reset</button>
+
+        </div>
+    </section>
+
+    <script>
+        document.querySelector('.open__btn').addEventListener('click', function () {
+            document.querySelector('.top__envelope').classList.add('active');
+            document.querySelector('.paper').classList.add('active');
+            document.querySelector('.envelope').classList.add('active');
+            document.querySelector('.heart__gif').classList.add('active');
+            document.querySelector('.open__btn').classList.add('active');
+            document.querySelector('.read__text_btn').classList.add('active');
+            document.querySelector('.letter__second--text').classList.add('active');
+            document.querySelector('.letter__heart').classList.add('active');
+        })
+
+
+        document.querySelector('.read__text_btn').addEventListener('click', function () {
+            document.querySelector('.letter').classList.add('active');
+            document.querySelector('.read__text_btn').classList.remove('active');
+            document.querySelector('.letter__window').classList.add('active');
+            document.querySelector('.letter__container').classList.add('active');
+            document.querySelector('.letter__text').classList.add('active');
+            document.querySelector('.reset__btn').classList.add('active');
+        })
+
+        // document.querySelector('.reset__btn').addEventListener('click', function () {
+        //     document.querySelector('.letter').classList.remove('active');
+        //     document.querySelector('.read__text_btn').classList.add('active');
+        //     document.querySelector('.letter__window').classList.remove('active');
+        //     document.querySelector('.letter__container').classLisremove('active');
+        //     document.querySelector('.letter__text').classList.remove('active');
+        //     document.querySelector('.reset__btn').classList.add('active');
+        // })
+        /*перенос с помщью пальца*/
+        // var paper = document.querySelector('.paper');
+        // var listener = (e) => {
+        //     paper.style.left = e.pageX - 50 + "px";
+        //     paper.style.top = e.pageY - 50 + "px";
+        // };
+        // paper.addEventListener('touchstart', e => {
+        //     document.addEventListener('touchmove', listener);
+        // });
+        // paper.addEventListener('touchend', e => {
+        //     document.removeEventListener('touchmove', listener);
+        // });
+        var animateButton = function (e) {
+
+            e.preventDefault;
+            //reset animation
+            e.target.classList.remove('animate');
+
+            e.target.classList.add('animate');
+            setTimeout(function () {
+                e.target.classList.remove('animate');
+            }, 700);
+        };
+
+        var open__btn = document.getElementsByClassName("bubbly-button");
+
+        for (var i = 0; i < open__btn.length; i++) {
+            open__btn[i].addEventListener('click', animateButton, false);
+        }
+    </script>
+</body>
+
+</html>
